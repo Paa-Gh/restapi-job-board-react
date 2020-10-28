@@ -7,7 +7,7 @@ import EditJobForm from './EditJobForm';
 const JobsList = props => {
 
   useEffect(() => {
-    axios.get('/api/v1/jobs')
+    axios.get('/api/v1/jobs.json')
         .then(res => setJobs(res.data))
       }, []);
 
