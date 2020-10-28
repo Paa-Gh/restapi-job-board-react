@@ -90,11 +90,9 @@ const JobsList = props => {
         </div>
         <br/>
         <hr/>
-        <div>
-        {(jobs.map((job, index) => (
+        {jobs.map((job, index) =>
             <Job key={index} job={job} removeJob={removeJob} editJob={editJob} editing={editing} />
-          )))}
-        </div>
+          )}
       </div>
     </div>
   )
