@@ -7,7 +7,7 @@ import EditJobForm from './EditJobForm';
 const JobsList = props => {
 
   useEffect(() => {
-    axios.get('/api/v1/jobs.json')
+    axios.get('https://paa-restapi-job-board-react.herokuapp.com//api/v1/jobs.json')
         .then(res => setJobs(res.data))
       }, []);
 
@@ -21,7 +21,7 @@ const JobsList = props => {
   const addJob = job => {
   const qs = require('qs');
 
-  axios.post('/api/v1/jobs', qs.stringify(
+  axios.post('https://paa-restapi-job-board-react.herokuapp.com//api/v1/jobs', qs.stringify(
       {
         job:{
           company: job.company,
@@ -35,7 +35,7 @@ const JobsList = props => {
   };
 
   const removeJob = id => {
-  axios.delete( '/api/v1/jobs/' + id )
+  axios.delete( 'https://paa-restapi-job-board-react.herokuapp.com//api/v1/jobs/' + id )
       .then(response => {
         setJobs(jobs.filter(job => job.id !== id))
       })
@@ -59,7 +59,7 @@ const JobsList = props => {
   setEditing(false);
 
   const qs = require('qs');
-    axios.patch('/api/v1/jobs/' + updatedJob.id, qs.stringify(
+    axios.patch('https://paa-restapi-job-board-react.herokuapp.com//api/v1/jobs/' + updatedJob.id, qs.stringify(
         {
           job:{
             company: updatedJob.company,
